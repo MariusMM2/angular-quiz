@@ -1,0 +1,13 @@
+<div>
+  Quiz title: {{quiz.title}}
+
+  <div *ngFor="let question of quiz.questions">
+    <br>
+    {{question.title}}
+
+    <div *ngFor="let option of question.options">
+      {{option.answer}}
+      <br>
+    </div>
+  </div>
+</div>
