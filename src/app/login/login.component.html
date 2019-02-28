@@ -1,3 +1,30 @@
-<p>
-  login works!
-</p>
+<form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+
+  <p>Username</p>
+
+  <mat-form-field>
+    <input formControlName="username" matInput type="text">
+  </mat-form-field>
+
+  <input formControlName="username" type="text">
+  <div *ngIf="loginForm.controls.username.errors?.required && loginForm.controls.username.touched">
+    You must fill out the username
+  </div>
+  <div *ngIf="loginForm.controls.username.errors?.minlength && loginForm.controls.username.touched">
+    Username must be at least 3 characters long.
+  </div>
+
+  <p>Password</p>
+
+  <mat-form-field>
+    <!--<input matInput type="text" formControlName="password">-->
+  </mat-form-field>
+  <!--<input formControlName="password" type="password">-->
+  <div *ngIf="loginForm.controls.password.errors?.required && loginForm.controls.password.touched">
+    You must fill out the password
+  </div>
+  <br>
+
+  <button [disabled]="!loginForm.valid" type="submit">Login</button>
+
+</form>

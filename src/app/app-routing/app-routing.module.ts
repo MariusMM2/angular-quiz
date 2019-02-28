@@ -6,13 +6,20 @@ import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 import { DisplayQuizComponent } from '../display-quiz/display-quiz.component';
+import { JosefComponent } from '../josef/josef.component';
+import { MortenComponent } from '../morten/morten.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
 
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
-  {path: 'login', component: LoginComponent},
+  {
+    path: 'login', component: LoginComponent, children: [
+      {path: 'morten', component: MortenComponent},
+      {path: 'josef', component: JosefComponent}
+    ]
+  },
   {path: 'register', component: RegisterComponent},
   {path: 'display-quiz', component: DisplayQuizComponent},
 
