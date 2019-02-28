@@ -1,0 +1,16 @@
+@import '../neptunepurple-candy.scss';
+
+.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox.
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.toolbar {
+  background-color: $neptune-candy-card-background-color;
+}
+
+mat-toolbar button {
+  background-color: $neptune-candy-primary-color;
+  margin-left: 10px;
+}
