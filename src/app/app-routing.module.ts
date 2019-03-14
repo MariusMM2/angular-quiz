@@ -12,8 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { PortalComponent } from './portal/portal.component';
 import { FindQuizComponent } from './find-quiz/find-quiz.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
-import { AuthGuard } from './auth/auth.guard';
-import { AdminGuard } from './admin/admin.guard';
+import { DisplayQuizzesComponent } from './display-quizzes/display-quizzes.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home/login', pathMatch: 'full'}, // if baseUrl => go to login
@@ -33,8 +32,10 @@ const routes: Routes = [
   },
 
   {
-    path: 'portal', component: PortalComponent, canActivate: [AuthGuard, AdminGuard], children: [
-      {path: 'display-quiz', component: DisplayQuizComponent},
+    // path: 'portal', component: PortalComponent, canActivate: [AuthGuard, AdminGuard], children: [
+    path: 'portal', component: PortalComponent, /*canActivate: [AuthGuard],*/ children: [
+      {path: 'display-quizzes', component: DisplayQuizzesComponent},
+      {path: 'display-quiz/:id', component: DisplayQuizComponent},
       {path: 'find-quiz', component: FindQuizComponent},
       {path: 'create-quiz', component: CreateQuizComponent}
     ]

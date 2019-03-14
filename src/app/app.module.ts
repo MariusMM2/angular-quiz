@@ -29,6 +29,7 @@ import { HomeComponent } from './home/home.component';
 import { PortalComponent } from './portal/portal.component';
 import { FindQuizComponent } from './find-quiz/find-quiz.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
+import { DisplayQuizzesComponent } from './display-quizzes/display-quizzes.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CreateQuizComponent } from './create-quiz/create-quiz.component';
     HomeComponent,
     PortalComponent,
     FindQuizComponent,
-    CreateQuizComponent
+    CreateQuizComponent,
+    DisplayQuizzesComponent
   ],
   imports: [
     BrowserModule,

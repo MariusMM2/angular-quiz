@@ -1,13 +1,26 @@
-<div>
-  Quiz title: {{quiz.title}}
+<mat-card class="quiz-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{quiz.title}}</mat-card-title>
+    <mat-card-subtitle>{{quiz.created.getDate() + "/" + quiz.created.getMonth() + "/" + quiz.created.getFullYear()}}</mat-card-subtitle>
+  </mat-card-header>
+  <!--<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
+  <mat-card-subtitle>Created by {{quiz.user.username}}</mat-card-subtitle>
+  <mat-card-content>
+    <p>In this quiz we have {{quiz.questions.length}} question{{quiz.questions.length != 1 ? 's' : ''}}</p>
 
-  <div *ngFor="let question of quiz.questions">
-    <br>
-    {{question.title}}
-
-    <div *ngFor="let option of question.options">
-      {{option.answer}}
+    <div *ngFor="let question of quiz.questions">
       <br>
+      <h4>{{question.title}}</h4>
+
+      <div *ngFor="let option of question.options">
+        <p>{{option.answer}}</p>
+
+      </div>
     </div>
-  </div>
-</div>
+  </mat-card-content>
+  <!--<mat-card-actions>-->
+    <!--<button mat-button>LIKE</button>-->
+    <!--<button mat-button>SHARE</button>-->
+  <!--</mat-card-actions>-->
+</mat-card>

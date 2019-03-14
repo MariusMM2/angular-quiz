@@ -38,17 +38,17 @@ export class LoginComponent implements OnInit {
 
     if (this.loginForm.valid) {
       // Send the data to the server to verify the user login
-      if (this.loginForm.value.username === 'admin') {
+      if (this.loginForm.value.username === 'admin' && false) {
         // log in as admin
         console.log('trying to log in as admin');
         this.adminService.login().subscribe(result => {
 
           console.log(result);
           // waits(2000);
-          console.log('navigating to display-quiz as admin');
+          console.log('navigating to display-quizzes as admin');
 
           // navigate after successful login.
-          this.router.navigate(['portal/display-quiz']);
+          this.router.navigate(['portal/display-quizzes']);
         });
       } else {
         console.log('trying to log in');
@@ -56,10 +56,10 @@ export class LoginComponent implements OnInit {
 
           console.log(result);
           // waits(2000);
-          console.log('navigating to display-quiz');
+          console.log('navigating to display-quizzes');
 
           // navigate after successful login.
-          this.router.navigate(['portal/display-quiz']);
+          this.router.navigate(['portal/display-quizzes']);
         });
       }
     } else {
