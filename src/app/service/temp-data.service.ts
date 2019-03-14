@@ -12,7 +12,7 @@ export class TempDataService {
   constructor() {
     this.users = [
       {
-        _id: '1',
+        _id: '0',
         username: '!asff', email: '!asdf@email.com', birthDate: new Date(1, 1, 30),
         gender: Gender.MALE
       },
@@ -22,14 +22,14 @@ export class TempDataService {
         gender: Gender.FEMALE
       },
       {
-        _id: '1',
+        _id: '2',
         username: 'asdf,butdifferent', email: 'asdf,butdifferent@email.com', birthDate: new Date(1, 2, 5),
         gender: Gender.MALE
       }
     ];
     this.quizzes = [
       {
-        _id: '1', visible: false, user: this.users[0],
+        _id: '0', visible: false, user: this.users[0],
         title: '1.Dogs', created: new Date(2019, 2, 1), questions: [
           {
             title: 'How many feet does a puddle have?', options: [
@@ -50,7 +50,7 @@ export class TempDataService {
         ]
       },
       {
-        _id: '2', visible: false, user: this.users[1],
+        _id: '1', visible: false, user: this.users[1],
         title: '2.More Dogs', created: new Date(2019, 1, 8), questions: [
           {
             title: 'How many feet does a puddle have?', options: [
@@ -71,7 +71,7 @@ export class TempDataService {
         ]
       },
       {
-        _id: '3', visible: false, user: this.users[2],
+        _id: '2', visible: false, user: this.users[2],
         title: '3.Even More Dogs', created: new Date(2019, 2, 4), questions: [
           {
             title: 'How many feet does a puddle have?', options: [
