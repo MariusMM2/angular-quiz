@@ -5,7 +5,6 @@ import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
 import { TempDataService } from '../service/temp-data.service';
 import { Quiz } from '../entities/quiz';
-import { stringify } from 'querystring';
 import { User } from '../entities/user';
 
 @Component({
@@ -52,7 +51,7 @@ export class CreateQuizComponent implements OnInit {
       duration: SNACKBAR_TIMEOUT,
     });
 
-    this.quizForm.value._id = stringify(this.tempData.getQuizzes().length);
+    this.quizForm.value._id = String(this.tempData.getQuizzes().length);
     this.quizForm.value.visible = true;
 
     if (this.quizForm.valid) {
@@ -103,7 +102,7 @@ export class CreateQuizComponent implements OnInit {
 
       this.tempData.addQuiz(quiz);
 
-      console.log('saving quiz "%s" by "%s"', quiz.title, quiz.user.username);
+      console.log('saving quiz id:%s by "%s"', quiz._id, quiz.user.username);
 
       this.router.navigate(['portal/display-quizzes']);
     }
