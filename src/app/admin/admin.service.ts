@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { delay, tap } from 'rxjs/operators';
-import { LoginComponent } from '../login/login.component';
+import { SNACKBAR_TIMEOUT } from '../entities/globals';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class AdminService {
 
   login(): Observable<boolean> {
     return of(true).pipe(
-      delay(LoginComponent.SNACKBAR_TIMEOUT + 200),
+      delay(SNACKBAR_TIMEOUT + 200),
       tap(val => {
         console.log('logged in as admin!');
         this.isLoggedIn = true;

@@ -16,12 +16,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
   MatCardModule,
+  MatCheckboxModule,
   MatDividerModule,
   MatFormFieldModule,
   MatGridListModule,
   MatIconModule,
   MatInputModule,
   MatMenuModule,
+  MatOptionModule,
+  MatSelectModule,
   MatSnackBarModule,
   MatToolbarModule
 } from '@angular/material';
@@ -62,7 +65,10 @@ import { DisplayQuizzesComponent } from './display-quizzes/display-quizzes.compo
     MatInputModule,
     MatSnackBarModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
+    MatCheckboxModule,
+    MatSelectModule,
+    MatOptionModule
   ],
 
   providers: [],

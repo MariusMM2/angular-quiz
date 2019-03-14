@@ -6,11 +6,23 @@
   flex: 1 1 auto;
 }
 
-.toolbar {
-  background-color: $neptune-candy-card-background-color;
+::ng-deep mat-toolbar {
+  background-color: $neptune-candy-card-background-color !important;
 }
 
-mat-toolbar button {
-  background-color: $neptune-candy-primary-color;
-  margin-left: 10px;
+::ng-deep mat-toolbar button {
+  background-color: $neptune-candy-primary-color !important;
+  margin-left: 10px !important;
+}
+
+mat-option {
+  //background-color: $neptune-candy-card-background-color;
+}
+
+::ng-deep .mat-select-panel {
+  background: $neptune-candy-background-color !important;
+}
+
+::ng-deep .mat-form-field .mat-form-field-infix {
+  width:  300px !important;
 }

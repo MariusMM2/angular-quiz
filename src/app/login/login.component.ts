@@ -4,14 +4,16 @@ import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 import { AdminService } from '../admin/admin.service';
+import { SNACKBAR_TIMEOUT } from '../entities/globals';
 
 @Component({
   selector: 'app-login', // name of component
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent implements OnInit {
-  public static SNACKBAR_TIMEOUT = 2000;
+  // public static SNACKBAR_TIMEOUT = 2000;
   loginForm: FormGroup;
 
   // DI - Dependency injection
@@ -30,8 +32,8 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.snackBar.open('One second, logging in..', 'Close', {
-      duration: LoginComponent.SNACKBAR_TIMEOUT,
+    this.snackBar.open('Logging in..', 'Close', {
+      duration: SNACKBAR_TIMEOUT,
     });
 
     console.log(this.loginForm);
