@@ -23,8 +23,8 @@ describe('workspace-project App', () => {
     element(by.id("password")).sendKeys("admin");
     element(by.id("submitBtn")).click();
 
-    let quizCard = element.all(by.css(".quiz-card")).get(0);
-    expect(quizCard.isPresent());
+    // let quizCard = element.all(by.css(".quiz-card")).get(0);
+    expect(browser.getCurrentUrl()).toContain('/portal/display-quizzes');
   });
 
   afterEach(async () => {
