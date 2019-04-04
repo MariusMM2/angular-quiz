@@ -60,6 +60,7 @@ export class CreateQuizComponent implements OnInit {
     });
 
     this.quizForm.value._id = String(this.data.getQuizzes().length);
+    this.quizForm.value.user = this.data.findUser(this.quizForm.value.user);
     this.quizForm.value.visible = true;
     this.quizForm.value.created = new Date();
 

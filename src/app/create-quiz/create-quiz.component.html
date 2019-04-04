@@ -12,7 +12,7 @@
 
         <mat-form-field appearance="outline">
           <mat-label>Quiz Title</mat-label>
-          <input matInput formControlName="title">
+          <input matInput id="createTitle" formControlName="title">
         </mat-form-field>
       </div>
 
@@ -20,8 +20,8 @@
 
         <mat-form-field appearance="outline">
           <mat-label>Author</mat-label>
-          <mat-select formControlName="user">
-            <mat-option *ngFor="let user of users" value="{{user}}">{{user.username}}</mat-option>
+          <mat-select id="createUserId" formControlName="user">
+            <mat-option class="option" *ngFor="let user of users" value="{{user._id}}">{{user.username}}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
@@ -35,7 +35,7 @@
 
             <mat-form-field appearance="outline" style="margin-top: 10px">
             <mat-label>Question</mat-label>
-            <input matInput formControlName="title">
+            <input matInput id="createQuestionTitle" formControlName="title">
             </mat-form-field>
             <!--OPTIONS SECTION-->
             <div formArrayName="options">
@@ -43,101 +43,24 @@
                 <div [formGroupName]="j">
 
                   <mat-form-field>
-                  <input matInput placeholder="Answer" formControlName="answer">
+                  <input matInput id="createAnswerTitle" placeholder="Answer" formControlName="answer">
                   </mat-form-field>
-                  <mat-checkbox formControlName="correct">Correct
+                  <mat-checkbox  id="createAnswerCorrect" formControlName="correct">Correct
                   </mat-checkbox>
                 </div>
               </div>
             </div>
-            <!--END OPTIONS SECTION-->
 
-            <button mat-raised-button color="primary" style="margin: 5px" type="button" (click)="newOption(i)">Add Option</button>
+            <button mat-raised-button id="createNewOption" color="primary" style="margin: 5px" type="button" (click)="newOption(i)">Add Option</button>
+            <!--END OPTIONS SECTION-->
 
           </div>
         </div>
       </div>
+
+      <button mat-raised-button id="createNewQuestion" color="primary" style="margin: 5px" type="button" (click)="newQuestion()">Add Question</button>
       <!--END QUESTIONS SECTION-->
 
-      <button mat-raised-button color="primary" style="margin: 5px" type="button" (click)="newQuestion(i)">Add Question</button>
-
-      <!--<div>-->
-
-        <!--<mat-form-field appearance="outline">-->
-          <!--<mat-label>Question</mat-label>-->
-          <!--<input matInput formControlName="q1Name">-->
-        <!--</mat-form-field>-->
-      <!--</div>-->
-
-      <!--<div style="margin-left: 20px">-->
-
-        <!--<div>-->
-
-          <!--<mat-form-field>-->
-            <!--<input matInput placeholder="Answer" formControlName="q1A1Title">-->
-          <!--</mat-form-field>-->
-          <!--<mat-checkbox formControlName="q1A1IsCorrect">Correct-->
-          <!--</mat-checkbox>-->
-        <!--</div>-->
-
-        <!--<div>-->
-
-          <!--<mat-form-field>-->
-            <!--<input matInput placeholder="Answer" formControlName="q1A2Title">-->
-          <!--</mat-form-field>-->
-          <!--<mat-checkbox formControlName="q1A2IsCorrect">Correct-->
-          <!--</mat-checkbox>-->
-        <!--</div>-->
-
-        <!--<div>-->
-
-          <!--<mat-form-field>-->
-            <!--<input matInput placeholder="Answer" formControlName="q1A3Title">-->
-          <!--</mat-form-field>-->
-          <!--<mat-checkbox formControlName="q1A3IsCorrect">Correct-->
-          <!--</mat-checkbox>-->
-        <!--</div>-->
-
-      <!--</div>-->
-
-      <!--<div>-->
-
-        <!--<mat-form-field appearance="outline">-->
-          <!--<mat-label>Question</mat-label>-->
-          <!--<input matInput formControlName="q2Name">-->
-        <!--</mat-form-field>-->
-      <!--</div>-->
-
-      <!--<div style="margin-left: 20px">-->
-
-        <!--<div>-->
-
-          <!--<mat-form-field>-->
-            <!--<input matInput placeholder="Answer" formControlName="q2A1Title">-->
-          <!--</mat-form-field>-->
-          <!--<mat-checkbox formControlName="q2A1IsCorrect">Correct-->
-          <!--</mat-checkbox>-->
-        <!--</div>-->
-
-        <!--<div>-->
-
-          <!--<mat-form-field>-->
-            <!--<input matInput placeholder="Answer" formControlName="q2A2Title">-->
-          <!--</mat-form-field>-->
-          <!--<mat-checkbox formControlName="q2A2IsCorrect">Correct-->
-          <!--</mat-checkbox>-->
-        <!--</div>-->
-
-        <!--<div>-->
-
-          <!--<mat-form-field>-->
-            <!--<input matInput placeholder="Answer" formControlName="q2A3Title">-->
-          <!--</mat-form-field>-->
-          <!--<mat-checkbox formControlName="q2A3IsCorrect">Correct-->
-          <!--</mat-checkbox>-->
-        <!--</div>-->
-
-      <!--</div>-->
 
     </mat-card-content>
     <mat-divider></mat-divider>
