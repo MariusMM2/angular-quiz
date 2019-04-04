@@ -33,6 +33,8 @@ import { PortalComponent } from './portal/portal.component';
 import { FindQuizComponent } from './find-quiz/find-quiz.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { DisplayQuizzesComponent } from './display-quizzes/display-quizzes.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { QuizListComponent } from './quiz-list/quiz-list.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { DisplayQuizzesComponent } from './display-quizzes/display-quizzes.compo
     PortalComponent,
     FindQuizComponent,
     CreateQuizComponent,
-    DisplayQuizzesComponent
+    DisplayQuizzesComponent,
+    QuizComponent,
+    QuizListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,17 @@
+@import '../../neptunepurple-candy.scss';
+
+mat-card {
+  background-color: $neptune-candy-card-background-color !important;
+  max-width: 600px;
+  margin: 10px;
+}
+
+mat-card-actions mat-card-subtitle {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}

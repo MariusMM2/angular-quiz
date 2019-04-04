@@ -1,0 +1,15 @@
+<div *ngFor="let quiz of quizzes">
+
+  <app-quiz
+  [quizInput]="quiz"
+  (quizClicked)="onQuizClicked($event)">
+  </app-quiz>
+</div>
+
+<!--<mat-card class="quiz-card" *ngFor="let quiz of quizzes">-->
+
+<!--  <app-quiz-->
+<!--    [quizInput]="quiz"-->
+<!--    (quizClicked)="onQuizClicked($event)">-->
+<!--  </app-quiz>-->
+<!--</mat-card>-->
